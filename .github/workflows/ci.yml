@@ -8,7 +8,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run CD for Staging
+      - name: Run CD for Stagin
         run: |
           # TODO Perform deployment steps for the staging environment
 
