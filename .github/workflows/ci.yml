@@ -8,9 +8,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run CD for Stagin
-        run: |
-          # TODO Perform deployment steps for the staging environment
+      - name: sign aab
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
+          keyPassword: ${{ secrets.KEYPASSWORD }}
+
+#      - name: Run CD for Stagin
+#        run: |
+#          # TODO Perform deployment steps for the staging environment
 
 #  lint:
 #    runs-on: ubuntu-latest
